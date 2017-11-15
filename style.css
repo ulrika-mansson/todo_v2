@@ -1,0 +1,33 @@
+body  {
+    margin: 0;
+    padding: 0;
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
+}
+
+.navbar {
+    border: 2px red solid;
+    display: flex;  
+    background-color: black;
+    text-decoration: none;
+    color: white;
+}
+
+.logInForm {
+    float: right;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid red;
+    position: fixed;
+    bottom: 0; 
+    right: 0;
+    height: 150px;
+    width: 100%;
+    
+}
+
