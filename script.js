@@ -17,8 +17,7 @@ $(document).ready(function(){
             console.log("user mail is ok");
             // Dölj helloForm, visa correctLogin
                 
-            /* $(".hejString").append(" hej " + $(".userEmail").val() ); */
-                
+                            
             $(".helloForm").hide();
             $(".correctLogin").show();
             
@@ -33,7 +32,11 @@ $(document).ready(function(){
             }
             
         });
-            
+
+        //visa datum - jag är så nöjd att jag vill dricka sprit
+            var date = new Date;
+            console.log(date);
+            $(".todaysDate").append(date.getFullYear(), "-", date.getMonth(), "-", date.getDate());
 
     
 })
