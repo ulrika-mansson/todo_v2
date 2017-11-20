@@ -4,15 +4,38 @@ $(document).ready(function(){
     
 
     //sätt variabler
+    var toDoList;
+    var numberOfThingsToDo = 0;
     var ourUser = "test"
     var ourPassword = "password"
     sessionStorage.isLoggedIn = false;
     console.log(sessionStorage.isLoggedIn);
 
+    fetch("./todo.json")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(todo) {
+        toDoList = todo;
+        createUIFromThingsToDo();
+    });
+
+    /* Kod för att läsa in todo-listan till index.html */
+    function createUIFromThingsToDo() {
+
+    /*hämta det som finns i main. inte helt säker på om detta verkligen behövs, men if it aint broken ...  
+    var main = document.getElementById("main"); */
+
+    //rita ut productList (produktlistan), sätt en klass på den
+    /*var productList = document.createElement("div");
+    productList.className = 'productListClass';*/
+    $(".toDoForgetAndDie").append
+
     //dölj forgotLogin och correctLogin
     $(".forgotLogin").hide();
     $(".correctLogin").hide();
     $(".logOut").hide();
+    $(".welcomeBack").hide();
 
     //funktion för att logga in med knapp
     $(".logInButton").click(function(){
@@ -44,12 +67,18 @@ $(document).ready(function(){
             
         });
 
+
+        
+        
+
         //funktion för att logga ut med knapp
             $(".logOutButton").click(function(){
 
-                //dölj logut, visa log in
+                //dölj logut, visa log in och welcomeBack
                 $(".logOut").hide();
+                $(".correctLogin").hide();
                 $(".logInForm").show();
+                $(".welcomeBack").show();
                 sessionStorage.isLoggedIn = false;
             });
 

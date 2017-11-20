@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Klipp gräset",
+        "description": "with care",
+        "image": "move-the-lawn.jpg",
+    },{
+        "title": "Betala räkningar",
+        "description": "Dirty job ...",
+        "image": "pay-the-bills.jpg",
+    },{
+        "title": "Köp mjölk",
+        "description": "For the coffe.",
+        "image": "buy-milk.jpg",
+    },{
+        "title": "Spika upp tavlor",
+        "description": "Super nice and beautiful smartphone from LG.",
+        "image": "the-moose.jpg",
+    }
+]
