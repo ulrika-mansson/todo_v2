@@ -2,90 +2,99 @@ $(document).ready(function(){
     console.log("fungerar?");
 
     
-
-    //sätt variabler
-    var toDoList;
-    var numberOfThingsToDo = 0;
+    //sätt globala variabler
     var ourUser = "test"
     var ourPassword = "password"
-    sessionStorage.isLoggedIn = false;
-    console.log(sessionStorage.isLoggedIn);
 
-    fetch("./todo.json")
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(todo) {
-        toDoList = todo;
-        createUIFromThingsToDo();
-    });
+    if (sessionStorage.ourUser != null) {
+            showCorrectLogIn();
+    } else {
+        showHelloForm();
+    }
 
-    /* Kod för att läsa in todo-listan till index.html */
-    function createUIFromThingsToDo() {
 
-    /*hämta det som finns i main. inte helt säker på om detta verkligen behövs, men if it aint broken ...  
-    var main = document.getElementById("main"); */
 
-    //rita ut productList (produktlistan), sätt en klass på den
-    /*var productList = document.createElement("div");
-    productList.className = 'productListClass';*/
-    $(".toDoForgetAndDie").append
-
-    //dölj forgotLogin och correctLogin
-    $(".forgotLogin").hide();
-    $(".correctLogin").hide();
-    $(".logOut").hide();
-    $(".welcomeBack").hide();
-
-    //funktion för att logga in med knapp
+   
+   //funktion för att logga in med knapp
     $(".logInButton").click(function(){
 
-        if (ourUser == $(".userName").val() && ourPassword == $(".passwordUser").val()) {
+        if (ourUser == $(".userName").val() && ourPassword == $(".passwordUser").val()) 
+        
+        {
+            showCorrectLogIn();
             
-            console.log("user mail is ok");
-            // Dölj helloForm, visa correctLogin
-            // dölj logInForm, visa logOut    
-                            
-            $(".helloForm").hide();
-            $(".forgotLogin").hide();
-            $(".correctLogin").show();
-            sessionStorage.isLoggedIn = true;
-            $(".logInForm").hide();
-            $(".logOut").show();
-
-            console.log(sessionStorage.isLoggedIn);
-            
+   
         } else {
-            console.log("fel ifyllt")
-            
+                       
             // Dölj helloForm, visa forgotLogin
-            
-            $(".helloForm").hide();
-            $(".forgotLogin").show();
-            
+            showForgotLogin();
             }
             
         });
 
-
         
-        
-
         //funktion för att logga ut med knapp
             $(".logOutButton").click(function(){
 
                 //dölj logut, visa log in och welcomeBack
-                $(".logOut").hide();
-                $(".correctLogin").hide();
-                $(".logInForm").show();
-                $(".welcomeBack").show();
-                sessionStorage.isLoggedIn = false;
+                showWelcomeBack();
             });
 
-        //visa datum - jag är så nöjd att jag vill dricka sprit
+
+            //visa datum - jag är så nöjd att jag vill dricka sprit
             var date = new Date;
             console.log(date);
+            /* $(".todaysDate").append(date); */
             $(".todaysDate").append(date.getFullYear(), "-", date.getMonth(), "-", date.getDate());
 
-    
+            //funktion för att visa startsida
+        function showHelloForm() {
+            $(".helloForm").show();
+            $(".forgotLogin").hide();
+            $(".correctLogin").hide();
+            $(".logOut").hide();
+            $(".welcomeBack").hide();
+            };
+            
+            //funktion för att visa rätt inloggning
+            function showCorrectLogIn() {
+                $(".helloForm").hide();
+                $(".forgotLogin").hide();
+                $(".correctLogin").show();
+                $(".logInForm").hide();
+                $(".logOut").show();
+                $(".welcomeBack").hide();
+                sessionStorage.isLoggedIn = $(".userName").val();
+                };
+
+        //funktion för att visa glömt inloggning
+        function showForgotLogin() {
+            $(".helloForm").hide();
+            $(".forgotLogin").show();
+            $(".correctLogin").hide();
+            $(".welcomeBack").hide();
+            $(".logOut").hide();
+        };
+
+
+        //funktion för att visa välkommen tillbaka efter inloggning
+        function showWelcomeBack() {
+            $(".logOut").hide();
+            $(".correctLogin").hide();
+            $(".logInForm").show();
+            $(".welcomeBack").show();
+            sessionStorage.isLoggedIn = false;
+        };
 })
+        var stuffToDo = [
+            "Klipp gräset", 
+            "Betala räkningar",
+            "Köp mjölk", 
+            "Spika upp tavlor"
+            ];
+        var myJSON = JSON.stringify(arr);
+        
+        console.log(stuffToDo);
+            
+
+        
