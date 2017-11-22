@@ -21,10 +21,10 @@
             
             <div class="logInForm">
                 <label for="fNamn">Förnamn
-                    <input class="userName" type="text" value="namn" name="fNamn" />
+                    <input class="userName" type="text" name="fNamn" />
                 </label>
                 <label for="passWord">Lösenord
-                    <input class="passwordUser" type="password" value="lösenord" name="passWord" />
+                    <input class="passwordUser" type="password" name="passWord" />
                     <button class="logInButton" type="submit" value="Submit">Logga in</button>
                 </label>
             </div>  
@@ -61,8 +61,14 @@
                         <li>La-la</li>    
                     </ul>
                         
-                    <ul class="toDoForgetAndDie">
-                        <h1>här kommer en lista över saker att göra</h1>              
+
+                    Lägg till något: <input class="addItem" type="text" />
+                    <button class="addItemButton" type="submit" >Lägg till</button>
+
+
+                    <ul id="toDoList">
+                        <h1>här kommer en lista över saker att göra</h1>   
+                        
                     </ul>
 
 
