@@ -15,8 +15,6 @@ $(document).ready(function(){
     }
  
 
- /*    showHelloForm(); */
-   
    //funktion för att logga in med knapp
     $(".logInButton").click(function(){
 
@@ -112,6 +110,7 @@ $(document).ready(function(){
             for(var i = 0; i < stuffToDo.length; i++) {
                 printList += "<li>" + stuffToDo[i] + " <a href='#' onclick='deleteItem(" + i + ")' >Radera</a>" + "</li>";
             }
+            console.log(stuffToDo);
             //ändra Radera till en fontawesome ikon
             
         document.getElementById("toDoList").innerHTML = printList;
