@@ -91,6 +91,7 @@ $(document).ready(function(){
         };
 })
 
+        
         //lägg arrayen i localStorage yada yada bla bla
         var stuffToDo = [
             "Klipp gräset", 
